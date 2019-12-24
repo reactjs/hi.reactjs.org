@@ -8,12 +8,12 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
-Handling events with React elements is very similar to handling events on DOM elements. There are some syntactic differences:
+React के एलिमेंट्स के साथ इवेंट्स हैंडल करना DOM एलिमेंट्स के इवेंट्स को हैंडल करने जैसा ही है । इनमे खाली कुछ सिंटैक्टिक अंतर हैं ।
 
-* React events are named using camelCase, rather than lowercase.
-* With JSX you pass a function as the event handler, rather than a string.
+* React के इवेंट्स का नाम lowercase कि जगह camelCase में रक्खा जाता है ।
+* JSX का उपयोग करते समय, आप एक function को इवेंट हैंडलर में पास करते हैं, न की एक string को ।
 
-For example, the HTML:
+उधारण के तौर पर, यह HTML code:
 
 ```html
 <button onclick="activateLasers()">
@@ -21,7 +21,7 @@ For example, the HTML:
 </button>
 ```
 
-is slightly different in React:
+React में थोडा अलग है:
 
 ```js{1}
 <button onClick={activateLasers}>
@@ -29,11 +29,11 @@ is slightly different in React:
 </button>
 ```
 
-Another difference is that you cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly. For example, with plain HTML, to prevent the default link behavior of opening a new page, you can write:
+इसमें एक फरक यह भी है कि आप React में default behavior से बचने के लिए `false` रिटर्न नही कर सकते । आपको `preventDefault` अलग से कॉल करना पड़ेगा । उदहारण के तौर पर, अगर आप किसी HTML डॉक्यूमेंट कि लिंक के दुसरे पन्ने को खोलने के डिफ़ॉल्ट बेहेवियर से बचना चाहते हैं तो आप यह लिख सकते हैं:
 
 ```html
 <a href="#" onclick="console.log('The link was clicked.'); return false">
-  Click me
+  इसे दबाएँ
 </a>
 ```
 
@@ -54,11 +54,11 @@ function ActionLink() {
 }
 ```
 
-Here, `e` is a synthetic event. React defines these synthetic events according to the [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), so you don't need to worry about cross-browser compatibility. See the [`SyntheticEvent`](/docs/events.html) reference guide to learn more.
+यहाँ पर `e` एक सिंथेटिक इवेंट है । React इन सिंथेटिक इवेंट्स को [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/) के हिसाब से परिभाषित करता है, ताकी आपको cross-browser compatibility कि चिंता नही करनी पड़े । और सीखने के लिए [`SyntheticEvent`](/docs/events.html) की रिफरेन्स गाइड को देखें ।
 
-When using React you should generally not need to call `addEventListener` to add listeners to a DOM element after it is created. Instead, just provide a listener when the element is initially rendered.
+React  को इस्तेमाल करते वक्त आम तौर पर आपको `addEventListener` को एक  DOM एलिमेंट पर कॉल करने की ज़रूरत नहीं पड़ेगी । इसकी जगह पर आप listener उस एलिमेंट पर तब ऐड कर सकते हैं जब वो इनिश्यली रेंडरा हो रहा हो ।
 
-When you define a component using an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes), a common pattern is for an event handler to be a method on the class. For example, this `Toggle` component renders a button that lets the user toggle between "ON" and "OFF" states:
+जब आप [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) से एक कौम्पोनॅन्ट डिफाइन करते हैं, तो इसके लिए इवेंट हैंडलर को उस क्लास का मेथड होना एक आम पैटर्न है । उद्धरण के तौर पर `Toggle` कॉम्पोनेन्ट एक बटन को रेंडर करता है, ये बटन यूज़र को "ON" और "OFF" states को बदलने देता है:
 
 ```js{6,7,10-14,18}
 class Toggle extends React.Component {
@@ -91,13 +91,13 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
+[**इससे CodePen पर इस्तेमाल करें**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
 
-You have to be careful about the meaning of `this` in JSX callbacks. In JavaScript, class methods are not [bound](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind) by default. If you forget to bind `this.handleClick` and pass it to `onClick`, `this` will be `undefined` when the function is actually called.
+JSX callbacks आपको `this` के मतलब के साथ ध्यानपूर्वक रहना चाहिए । जावास्क्रिप्ट में class मेथड्स पहले से [bound](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind) नहीं होते । अगर आप `this.handleClick` को bind करना भूल जाते हैं और उसे `onClick` पर पास कर देते हैं तो, `this` function के बुलाने पर `undefined` हो जाता है ।
 
-This is not React-specific behavior; it is a part of [how functions work in JavaScript](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/). Generally, if you refer to a method without `()` after it, such as `onClick={this.handleClick}`, you should bind that method.
+यह बर्ताव React कि वजेह से नहीं होता बल्कि यह [जावास्क्रिप्ट के functions के काम करने के तरीके का एक भाग है ](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/). आम तौर पर अगर आप किसी मेथड को बिना `()` को उसके बाद में लगाये refer करते है, जैसे, `onClick={this.handleClick}` तो आपको वो मेथड bind करना चाहिए ।
 
-If calling `bind` annoys you, there are two ways you can get around this. If you are using the experimental [public class fields syntax](https://babeljs.io/docs/plugins/transform-class-properties/), you can use class fields to correctly bind callbacks:
+अगर `bind` का बार बार कॉल करना आपको परेशान करता है, तो इससे बचने के आपके पास दो तरीके हैं । अगर आप experimental [public class फ़ील्ड्स सिंटेक्स](https://babeljs.io/docs/plugins/transform-class-properties/) इस्तेमाल कर रहे हैं, तो आप class फ़ील्ड्स का इस्तेमाल करके callbacks को सही से bind कर सकते हैं:
 
 ```js{2-6}
 class LoggingButton extends React.Component {
@@ -117,9 +117,9 @@ class LoggingButton extends React.Component {
 }
 ```
 
-This syntax is enabled by default in [Create React App](https://github.com/facebookincubator/create-react-app).
+यह सिंटैक्स [Create React App](https://github.com/facebookincubator/create-react-app) में डिफ़ॉल्ट रूप में पाया जाता है। 
 
-If you aren't using class fields syntax, you can use an [arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) in the callback:
+अगर आप class फील्ड सिंटैक्स नहीं इस्तेमाल कर रहें हैं तो आप callback में [एरो फंक्शन](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) का इस्तेमाल कर सकते हैं। 
 
 ```js{7-9}
 class LoggingButton extends React.Component {
@@ -138,17 +138,17 @@ class LoggingButton extends React.Component {
 }
 ```
 
-The problem with this syntax is that a different callback is created each time the `LoggingButton` renders. In most cases, this is fine. However, if this callback is passed as a prop to lower components, those components might do an extra re-rendering. We generally recommend binding in the constructor or using the class fields syntax, to avoid this sort of performance problem.
+इस सिंटैक्स के साथ यह दिक्कत है की जितनी बार कोई अलग callback बनता है उतनी बार `LoggingButton` फिरसे रेंडर होता है। ज़्यादातर मामलो में इससे कोई समस्या नहीं होती है। लेकिन अगर इस callback को निचले कौम्पोनॅन्ट में पास किया जाता है तो हो सकता है की कौम्पोनॅन्ट को ज़्यादा री-रेंडरिंग करनी पड़े। हम आम तौर पर constructor को bind करने के लिए या class फील्ड सिंटैक्स के इस्तेमाल को बढ़ावा देते हैं ताकि इस तरह की परफॉरमेंस की दिक्कते ना आए। 
 
-## Passing Arguments to Event Handlers {#passing-arguments-to-event-handlers}
+## इवेंट हैंडलर में आर्ग्यूमेंट्स देना {#passing-arguments-to-event-handlers}
 
-Inside a loop it is common to want to pass an extra parameter to an event handler. For example, if `id` is the row ID, either of the following would work:
+एक loop के अंदर अक्सर लोग इवेंट हैंडलर में एक एक्स्ट्रा पैरामीटर देना चाहते हैं। उदहारण के तौर पर अगर `id` एक row की id है तो इनमे से कोई भी काम कर जाएगा:
 
 ```js
 <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
 <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
 ```
 
-The above two lines are equivalent, and use [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) and [`Function.prototype.bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind) respectively.
+ऊपर की दोनों लाइने एक ही काम करती हैं और [एरो फंक्शन्स](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) और [`Function.prototype.bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind) का क्रमशः इस्तेमाल करती हैं।
 
-In both cases, the `e` argument representing the React event will be passed as a second argument after the ID. With an arrow function, we have to pass it explicitly, but with `bind` any further arguments are automatically forwarded.
+इन दोनों ही मामलो में `e` आर्गुमेंट जो की React इवेंट को दिखाता है वो एक दूसरे आर्गुमेंट की तरह ID के बाद pass किया जाएगा। एरो फंक्शन्स के साथ हमे इसे स्पष्ठ रूप में पास करना होगा, लेकिन `bind` के साथ कोई भी अतिरिक्त आर्ग्यूमेंट्स खुद ब खुद आगे चले जाते हैं।
