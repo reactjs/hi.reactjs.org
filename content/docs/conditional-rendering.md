@@ -8,23 +8,23 @@ redirect_from:
   - "tips/false-in-jsx.html"
 ---
 
-In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.
+React में, आप अलग-अलग कौम्पोनॅन्ट बना सकते हैं जो आपके लिए आवश्यक व्यवहार को एनकैप्सुलेट करते हैं। फिर, आप अपने ऍप की स्टेट के आधार पर उनमें से कुछ को ही रिप्रेजेंट कर सकते हैं।
 
-Conditional rendering in React works the same way conditions work in JavaScript. Use JavaScript operators like [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) or the [conditional operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) to create elements representing the current state, and let React update the UI to match them.
+कंडीशनल रेंडरिंग React में वैसे ही काम करता है जैसे कंडीशंस जावास्क्रिप्ट में करते है। जावास्क्रिप्ट के ऑपरेटर्स [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) और [`कंडीशनल ऑपरेटर्स `](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) का इस्तेमाल ऐसे एलिमेंट्स बनाने के लिए किया जा सकता हे जो करंट स्टेट को रिप्रेजेंट करे, और React उस हिसाब से UI को अपडेट करेगा ताकि वेह UI से मैच करे।
 
-Consider these two components:
+उदाहरण के तौर पे यह दो कौम्पोनॅन्ट को देखे:
 
 ```js
 function UserGreeting(props) {
-  return <h1>Welcome back!</h1>;
+  return <h1>वापसी पर स्वागत है!</h1>;
 }
 
 function GuestGreeting(props) {
-  return <h1>Please sign up.</h1>;
+  return <h1>कृपया साइन अप करो।</h1>;
 }
 ```
 
-We'll create a `Greeting` component that displays either of these components depending on whether a user is logged in:
+हम एक Greeting कौम्पोनॅन्ट बनाएंगे जो यूजर की लॉग्डइन स्थिति के अनुसार इन दोनों में से एक कॉम्पोनेन्ट दिखायेगा:
 
 ```javascript{3-7,11,12}
 function Greeting(props) {
@@ -42,15 +42,15 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
+[**CodePen में कोशिश करो**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
 
-This example renders a different greeting depending on the value of `isLoggedIn` prop.
+यह उदहारण `isLoggedIn` प्रोप के वैल्यू के अनुसार अलग अलग ग्रीटिंग्स रेंडर करता है।
 
-### Element Variables {#element-variables}
+### एलिमेंट वेरिएबल्स {#element-variables}
 
-You can use variables to store elements. This can help you conditionally render a part of the component while the rest of the output doesn't change.
+आप एलिमेंट्स को स्टोर करने के लिए वेरिएबल्स का उसे उपयोग कर सकते हैं। यह आपको कंडीशनल रेंडरिंग में मदद करेगा जबकि बाकि का आउटपुट नहीं बदलेगा। 
 
-Consider these two new components representing Logout and Login buttons:
+लॉगिन और लॉगआउट बटन्स के नए कौम्पोनॅन्टस पर विचार करें :
 
 ```js
 function LoginButton(props) {
@@ -70,9 +70,10 @@ function LogoutButton(props) {
 }
 ```
 
-In the example below, we will create a [stateful component](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) called `LoginControl`.
 
-It will render either `<LoginButton />` or `<LogoutButton />` depending on its current state. It will also render a `<Greeting />` from the previous example:
+इस उदहारण में हम बना रहे है [स्टेटफुल कौम्पोनॅन्ट](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) जिसे बोलते हैं `LoginControl`। 
+
+जो करंट स्टेट के हिसाब से `<LoginButton />` या  `<LogoutButton />` को रेंडर करेगा। वो `<Greeting />` को भी रेंडर करेगा जैसे पिछले उदहारण में बताया था:
 
 ```javascript{20-25,29,30}
 class LoginControl extends React.Component {
@@ -118,11 +119,11 @@ ReactDOM.render(
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
 
-While declaring a variable and using an `if` statement is a fine way to conditionally render a component, sometimes you might want to use a shorter syntax. There are a few ways to inline conditions in JSX, explained below.
+वेरिएबल डिक्लेअर करते वक्त, `if` स्टेटमेंट से कौम्पोनॅन्ट को कण्डीशनली रेंडर करना सही तरीका है, कभी आपको छोटा शार्ट सिंटेक्स उसे करना पड़ सकता है। यहाँ नीचे, JSX में इन लाइन कंडीशंस के कुछ पर्याय दिए गए हैं। 
 
-### Inline If with Logical && Operator {#inline-if-with-logical--operator}
+### लॉजिकल && ऑपरेटर के साथ इन लाइन `if` का इस्तेमाल  {#inline-if-with-logical--operator}
 
-You may [embed any expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
+आप [किसी भी एक्सप्रेशन को `jsx`](/docs/introducing-jsx.html#embedding-expressions-in-jsx) में कर्ली ब्रेसेस इस्तेमाल करके ड़ाल सकते हैं। इसमें जावास्क्रिप्ट का लॉजिकल `&&` ऑपरेटर भी शामिल है। इसकी मदद से हम किसी भी एलिमेंट को कंडीशंस से इन्क्लूड कर सकते है: 
 
 ```js{6-10}
 function Mailbox(props) {
@@ -148,15 +149,15 @@ ReactDOM.render(
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
 
-It works because in JavaScript, `true && expression` always evaluates to `expression`, and `false && expression` always evaluates to `false`.
+जैवसक्रिप्ट मे यह काम करता है क्यूंकि, `true && expression` हमेशा `expression` बन जाता है, और `false && expression` हमेशा `false` बन जाता है।
 
-Therefore, if the condition is `true`, the element right after `&&` will appear in the output. If it is `false`, React will ignore and skip it.
+इसीलिए, अगर कोई कंडीशन `true` है, तोह `&&` के आगे का एलिमेंट आउटपुट में आ जाता है। अगर यह `false` है, फिर React इसको रेंडर नहीं करता है। 
 
-### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
+### कंडीशनल ऑपरेटर्स के साथ इन लाइन If-Else {#inline-if-else-with-conditional-operator}
 
-Another method for conditionally rendering elements inline is to use the JavaScript conditional operator [`condition ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
+जावास्क्रिप्ट कंडीशनल ऑपरेटर [`condition ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) इस्तेमाल करके एलिमेंट्स को इन लाइन में कण्डीशनली रेंडर भी कर सकते हैं।
 
-In the example below, we use it to conditionally render a small block of text.
+जैसे नीचे के उदहारण में, छोटे टेक्स्ट ब्लॉक को इसे इस्तेमाल करके कण्डीशनली रेंडर किया है।
 
 ```javascript{5}
 render() {
@@ -169,7 +170,7 @@ render() {
 }
 ```
 
-It can also be used for larger expressions although it is less obvious what's going on:
+इसे हम बड़े एक्सप्रेशन्स के साथ भी उसे कर सकते है हालांकि यह जानना कम स्पष्ट है कि क्या हो रहा है:
 
 ```js{5,7,9}
 render() {
@@ -185,13 +186,13 @@ render() {
 }
 ```
 
-Just like in JavaScript, it is up to you to choose an appropriate style based on what you and your team consider more readable. Also remember that whenever conditions become too complex, it might be a good time to [extract a component](/docs/components-and-props.html#extracting-components).
+जैसे की जावास्क्रिप्ट में होता है, यह हम पे निर्भर करता है की कोनसा स्टाइल इस्तेमाल करें जिससे आप और आपकी टीम को समझना आसान हो। यह भी याद रहना की जैसे कंडीशंस बड़ी और पेचीदा हो, तब कौम्पोनॅन्ट को एक्सट्रेक्ट करना अच्छा रहता है [कौम्पोनॅन्ट एक्सट्रेक्ट करना](/docs/components-and-props.html#extracting-components)।
 
-### Preventing Component from Rendering {#preventing-component-from-rendering}
+### कौम्पोनॅन्ट को रेंडर होने से रोकें {#preventing-component-from-rendering}
 
-In rare cases you might want a component to hide itself even though it was rendered by another component. To do this return `null` instead of its render output.
+कुछ केसेस में कौम्पोनॅन्ट को छिपाना पड़ता है जब की वह किसी दूसरे कौम्पोनॅन्ट में रेंडर हो रहे हो। तब हमको आउटपुट को रेंडर करने के बजाये `null` रीटर्न करना है।
 
-In the example below, the `<WarningBanner />` is rendered depending on the value of the prop called `warn`. If the value of the prop is `false`, then the component does not render:
+जैसे नीचे के उदहारण में, `<WarningBanner />` यह कौम्पोनॅन्ट `warn` प्रोप के वैल्यू के अनुसार रेंडर हुआ है। अगर इसकी वैल्यू `false` रहती तो कौम्पोनॅन्ट रेंडर नहीं होता:
 
 ```javascript{2-4,29}
 function WarningBanner(props) {
@@ -239,4 +240,4 @@ ReactDOM.render(
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
 
-Returning `null` from a component's `render` method does not affect the firing of the component's lifecycle methods. For instance `componentDidUpdate` will still be called.
+कौम्पोनॅन्ट के `रेंडर` से `null` रीटर्न करने का कौम्पोनॅन्ट के लाइफ साइकिल मेथड्स पर कोई असर नहीं पड़ता। जैसे की `componentDidUpdate` फिर भी कॉल होगा।
