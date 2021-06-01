@@ -1,43 +1,43 @@
 ---
 id: glossary
-title: Glossary of React Terms
+title: React की टर्म्स का शब्दकोष
 layout: docs
 category: Reference
 permalink: docs/glossary.html
 
 ---
 
-## Single-page Application {#single-page-application}
+## सिंगल-पृष्ठ एप्लीकेशन {#single-page-application}
 
-A single-page application is an application that loads a single HTML page and all the necessary assets (such as JavaScript and CSS) required for the application to run. Any interactions with the page or subsequent pages do not require a round trip to the server which means the page is not reloaded.
+सिंगल-पृष्ठ एप्लिकेशन एक ऐसा एप्लिकेशन है जो एक ही HTML पृष्ठ को लोड करता है और उसके साथ सभी आवश्यक एसेट्स (जैसे जावास्क्रिप्ट और css) जो एप्लिकेशन को चलाने के लिए आवश्यक है को भी लोड करता है। पृष्ठ या बाद के पृष्ठों के साथ किसी भी इंटरेक्शन के लिए सर्वर तक राउंड ट्रिप की आवश्यकता नहीं होती है जिसका अर्थ है कि पृष्ठ रीलोड नहीं होता है।
 
-Though you may build a single-page application in React, it is not a requirement. React can also be used for enhancing small parts of existing websites with additional interactivity. Code written in React can coexist peacefully with markup rendered on the server by something like PHP, or with other client-side libraries. In fact, this is exactly how React is being used at Facebook.
+यद्यपि आप React में सिंगल-पृष्ठ एप्लिकेशन का निर्माण कर सकते हैं,पर यह कोई आवश्यकता नहीं है। React का उपयोग मौजूदा वेबसाइटस के छोटे हिस्सों में अतिरिक्त इंट्रक्टिविटी बढ़ाने के लिए भी किया जा सकता है। React में लिखा गया कोड अन्य लाइब्रेरीज के साथ रेंडर किया जा सकता है। React मार्कअप सर्वर रेंडरड लाइब्रेरीज  जैसे की PHP या अन्य क्लाइंट-साइड लाइब्रेरीज के साथ शांतिपूर्वक रेंडर हो सकता है। फेसबुक में React का उपयोग ठीक इसी तरह किया जाता है।
 
-## ES6, ES2015, ES2016, etc {#es6-es2015-es2016-etc}
+## ES6, ES2015, ES2016, आदि {#es6-es2015-es2016-etc}
 
-These acronyms all refer to the most recent versions of the ECMAScript Language Specification standard, which the JavaScript language is an implementation of. The ES6 version (also known as ES2015) includes many additions to the previous versions such as: arrow functions, classes, template literals, `let` and `const` statements. You can learn more about specific versions [here](https://en.wikipedia.org/wiki/ECMAScript#Versions).
+ये सभी शब्द ECMAScript लैंग्वेज स्पेसिफिकेशन स्टैंडर्ड के सबसे हाल के वर्शन्स को संदर्भित करते हैं,जावास्क्रिप्ट भाषा इसी का एक कार्यान्वयन है। ES6 वर्शन (जिसे ES2015 के रूप में भी जाना जाता है) में पिछले वर्शन्स के मुकाबले में कई परिवर्धन शामिल किये गए हैं जैसे की: एरो फ़ंक्शंस, क्लासेस, टेम्प्लेट लिटेरल्स, `let` और `const` स्टेटमेंट। आप [यहां](https://en.wikipedia.org/wiki/ECMAScript#Versions) विशिष्ट वर्शन्स के बारे में अधिक जान सकते हैं।
 
-## Compilers {#compilers}
+## कम्पाइलर्स {#compilers}
 
-A JavaScript compiler takes JavaScript code, transforms it and returns JavaScript code in a different format. The most common use case is to take ES6 syntax and transform it into syntax that older browsers are capable of interpreting. [Babel](https://babeljs.io/) is the compiler most commonly used with React.
+एक जावास्क्रिप्ट कंपाइलर जावास्क्रिप्ट कोड लेता है, और उसे बदल कर एक अलग प्रारूप में जावास्क्रिप्ट कोड देता है। सबसे आम उपयोग ES6 सिंटैक्स लेने और इसे ऊस सिंटैक्स में बदलने का है जिसे कि पुराने ब्राउज़र व्याख्या करने में सक्षम हैं। आमतौर पर React के साथ [Babel](https://babeljs.io/) कंपाइलर का उपयोग किया जाता है।
 
-## Bundlers {#bundlers}
+## बंडलर्स {#bundlers}
 
-Bundlers take JavaScript and CSS code written as separate modules (often hundreds of them), and combine them together into a few files better optimized for the browsers. Some bundlers commonly used in React applications include [Webpack](https://webpack.js.org/) and [Browserify](http://browserify.org/).
+बंडलर्स अलग-अलग मॉड्यूल्स के रूप में लिखे गए(अक्सर सैकड़ों में) जावास्क्रिप्ट और css कोड को एक साथ जोड़कर कुछ फाइल्स बनाते है जो की ब्राउज़रों के लिए बेहतर अनुकूलित हैं। आमतौर पर React एप्लिकेशन में उपयोग किए जाने वाले कुछ बंडलों में [Webpack](https://webpack.js.org/) और [Browserify](http://browserify.org/) शामिल हैं।
 
-## Package Managers {#package-managers}
+## Package मैनेजर्स {#package-managers}
 
-Package managers are tools that allow you to manage dependencies in your project. [npm](https://www.npmjs.com/) and [Yarn](https://yarnpkg.com/) are two package managers commonly used in React applications. Both of them are clients for the same npm package registry.
+Package मैनेजर वे उपकरण हैं जो आपको अपने प्रोजेक्ट में डेपेंडेंसीएस का प्रबंधन करने की अनुमति देते हैं। [npm](https://www.npmjs.com/) और [Yarn](https://yarnpkg.com/) दो package मैनेजर हैं जो आमतौर पर React एप्लिकेशन में उपयोग किए जाते हैं। ये दोनों समान npm package रजिस्ट्री के क्लाइंट हैं।
 
 ## CDN {#cdn}
 
-CDN stands for Content Delivery Network. CDNs deliver cached, static content from a network of servers across the globe. 
+CDN से हमारा मतलब कंटेंट डिलीवरी नेटवर्क है। CDN दुनिया भर में मौजूद सर्वर के नेटवर्क की सहायता से कैश्ड, स्थिर सामग्री वितरित करते हैं।
 
 ## JSX {#jsx}
 
-JSX is a syntax extension to JavaScript. It is similar to a template language, but it has full power of JavaScript. JSX gets compiled to `React.createElement()` calls which return plain JavaScript objects called "React elements". To get a basic introduction to JSX [see the docs here](/docs/introducing-jsx.html) and find a more in-depth tutorial on JSX [here](/docs/jsx-in-depth.html).
+JSX जावास्क्रिप्ट का एक सिंटैक्स एक्सटेंशन है। यह एक टेम्पलेट भाषा के समान है, लेकिन इसमें जावास्क्रिप्ट की पूरी शक्ति है। JSX `React.createElement()` कॉल में कम्पाइल होता है जो सादे जावास्क्रिप्ट ऑब्जेक्ट वापस करता है जिसे "React एलिमेंट्स" कहते हैं। JSX का मूल परिचय प्राप्त करने के लिए [यहां डॉक्स देखें](/docs/introducing-jsx.html) और JSX पर अधिक गहराई से ट्यूटोरियल [यहां](/docs/jsx-in-depth.html) देखें।
 
-React DOM uses camelCase property naming convention instead of HTML attribute names. For example, `tabindex` becomes `tabIndex` in JSX. The attribute `class` is also written as `className` since `class` is a reserved word in JavaScript:
+React DOM, HTML विशेषता नामों के बजाय कैमलकेस प्रॉपर्टी नेमिंग कन्वेंशन का उपयोग करता है। उदाहरण के लिए, `tabindex` JSX में `tabIndex` बन जाता है। विशेषता `class` को `className` के रूप में भी लिखा जाता है क्योंकि `class` जावास्क्रिप्ट में एक आरक्षित शब्द है:
 
 ```js
 const name = 'Clementine';
@@ -47,19 +47,19 @@ ReactDOM.render(
 );
 ```  
 
-## [Elements](/docs/rendering-elements.html) {#elements}
+## [एलिमेंट्स](/docs/rendering-elements.html) {#elements}
 
-React elements are the building blocks of React applications. One might confuse elements with a more widely known concept of "components". An element describes what you want to see on the screen. React elements are immutable.
+React एलिमेंट्स React एप्लीकेशन के निर्माण खंड हैं। एक अधिक व्यापक रूप से ज्ञात अवधारणा "कौम्पोनॅन्ट्स" के साथ एलिमेंट्स को भ्रमित कर सकता है। एक एलिमेंट्स वर्णन करता है कि आप स्क्रीन पर क्या देखना चाहते हैं। React एलिमेंट्स अपरिवर्तनीय हैं।
 
 ```js
 const element = <h1>Hello, world</h1>;
 ```
 
-Typically, elements are not used directly, but get returned from components.
+आमतौर पर, एलिमेंट्स का सीधे उपयोग नहीं किया जाता है, लेकिन कौम्पोनॅन्ट्स से वापस किये जाते हैं।
 
-## [Components](/docs/components-and-props.html) {#components}
+## [कौम्पोनॅन्ट्स](/docs/components-and-props.html) {#components}
 
-React components are small, reusable pieces of code that return a React element to be rendered to the page. The simplest version of React component is a plain JavaScript function that returns a React element:
+React कौम्पोनॅन्ट्स छोटे, पुन: प्रयोज्य टुकड़े हैं जो पृष्ठ पर रेंडर करने के लिए एक React एलिमेंट्स को वापस करते हैं। React कौम्पोनॅन्ट का सबसे सरल संस्करण एक सादे जावास्क्रिप्ट फ़ंक्शन है जो एक React एलिमेंट वापस करता है:
 
 ```js
 function Welcome(props) {
@@ -67,7 +67,7 @@ function Welcome(props) {
 }
 ```
 
-Components can also be ES6 classes:
+कौम्पोनॅन्ट्स ES6 classes भी हो सकते हैं:
 
 ```js
 class Welcome extends React.Component {
@@ -77,30 +77,30 @@ class Welcome extends React.Component {
 }
 ```
 
-Components can be broken down into distinct pieces of functionality and used within other components. Components can return other components, arrays, strings and numbers. A good rule of thumb is that if a part of your UI is used several times (Button, Panel, Avatar), or is complex enough on its own (App, FeedStory, Comment), it is a good candidate to be a reusable component. Component names should also always start with a capital letter (`<Wrapper/>` **not** `<wrapper/>`). See [this documentation](/docs/components-and-props.html#rendering-a-component) for more information on rendering components. 
+कौम्पोनॅन्ट्स को कार्यक्षमता के अलग-अलग टुकड़ों में विभाजित किया जा सकता है और अन्य कौम्पोनॅन्ट्स के भीतर उपयोग किया जा सकता है। कौम्पोनॅन्ट्स अन्य कौम्पोनॅन्ट्स, arrays, strings और numbers को वापस कर सकते हैं। अंगूठे का एक अच्छा नियम यह है कि यदि आपके UI का एक हिस्सा कई बार उपयोग किया जाता है (बटन, पैनल, अवतार), या अपने आप में पर्याप्त जटिल है (ऐप, फीडस्टोरी, टिप्पणी), तो पुन: प्रयोज्य कौम्पोनॅन्ट होने के लिए यह एक अच्छा उम्मीदवार है । कौम्पोनॅन्ट नाम हमेशा एक कैपिटल लेटर (`<Wrapper/>` **not** `<wrapper/>`) से शुरू होना चाहिए। रेंडरिंग कौम्पोनॅन्ट्स के बारे में अधिक जानकारी के लिए [यह दस्तावेज़](/docs/components-and-props.html#rendering-a-component) देखें।
 
 ### [`props`](/docs/components-and-props.html) {#props}
 
-`props` are inputs to a React component. They are data passed down from a parent component to a child component.
+`props` एक React कौम्पोनॅन्ट के लिए इनपुट हैं। वे डेटा हैं जो मूल कौम्पोनॅन्ट से चाइल्ड कौम्पोनॅन्ट तक जाते हैं।
 
-Remember that `props` are readonly. They should not be modified in any way:
+याद रखें कि `props` को सिर्फ रीड ओनली हैं। उन्हें किसी भी तरह से संशोधित नहीं किया जाना चाहिए:
 
 ```js
 // Wrong!
 props.number = 42;
 ```
 
-If you need to modify some value in response to user input or a network response, use `state` instead.
+यदि आपको यूजर इनपुट या नेटवर्क रिस्पांस के जवाब में कुछ वैल्यू को बदलने की आवश्यकता है, तो इसके बजाय `state` का उपयोग करें।
 
 ### `props.children` {#propschildren}
 
-`props.children` is available on every component. It contains the content between the opening and closing tags of a component. For example:
+`props.children` हर कौम्पोनॅन्ट पर उपलब्ध है। इसमें किसी कौम्पोनॅन्ट के खुलने और बंद होने के टैग्स के बीच की सामग्री शामिल है। उदाहरण के लिए:
 
 ```js
 <Welcome>Hello world!</Welcome>
 ```
 
-The string `Hello world!` is available in `props.children` in the `Welcome` component:
+String `Hello world!` `Welcome` कौम्पोनॅन्ट में `props.children` में उपलब्ध है:
 
 ```js
 function Welcome(props) {
@@ -108,7 +108,7 @@ function Welcome(props) {
 }
 ```
 
-For components defined as classes, use `this.props.children`:
+classes के रूप में परिभाषित कौम्पोनॅन्ट्स के लिए, `this.props.children` का उपयोग करें:
 
 ```js
 class Welcome extends React.Component {
@@ -120,47 +120,47 @@ class Welcome extends React.Component {
 
 ### [`state`](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) {#state}
 
-A component needs `state` when some data associated with it changes over time. For example, a `Checkbox` component might need `isChecked` in its state, and a `NewsFeed` component might want to keep track of `fetchedPosts` in its state.
+एक कौम्पोनॅन्ट को `state` की आवश्यकता तब होती है जब उस कौम्पोनॅन्ट का डेटा कभी बदलता है। उदाहरण के लिए, एक `Checkbox` कौम्पोनॅन्ट को अपने state में `isChecked` की आवश्यकता हो सकती है, और एक `NewsFeed` कौम्पोनॅन्ट अपने state में `fetchedPosts` का ट्रैक रखना चाह सकता है।
 
-The most important difference between `state` and `props` is that `props` are passed from a parent component, but `state` is managed by the component itself. A component cannot change its `props`, but it can change its `state`.
+`state` और `props` के बीच सबसे महत्वपूर्ण अंतर यह है कि `props` को पैरेंट कौम्पोनॅन्ट से पास किया जाता है, लेकिन `state` को कौम्पोनॅन्ट द्वारा ही प्रबंधित किया जाता है। एक कौम्पोनॅन्ट अपने `props` को नहीं बदल सकता है, लेकिन यह अपनी `state` को बदल सकता है।
 
-For each particular piece of changing data, there should be just one component that "owns" it in its state. Don't try to synchronize states of two different components. Instead, [lift it up](/docs/lifting-state-up.html) to their closest shared ancestor, and pass it down as props to both of them.
+बदलते डेटा के प्रत्येक विशेष टुकड़े के लिए, केवल एक कौम्पोनॅन्ट होना चाहिए जो उस डेटा का "मालिक" हो और अपने state में रखे। दो अलग-अलग कौम्पोनॅन्ट्स के states को सिंक्रनाइज़ करने का प्रयास न करें। इसके बजाय, इसे उनके निकटतम साझा पूर्वज [में रखे](/docs/lifting-state-up.html), और इसे उन दोनों को props के रूप में पास करें।
 
-## [Lifecycle Methods](/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class) {#lifecycle-methods}
+## [Lifecycle मेथड्स](/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class) {#lifecycle-methods}
 
-Lifecycle methods are custom functionality that gets executed during the different phases of a component. There are methods available when the component gets created and inserted into the DOM ([mounting](/docs/react-component.html#mounting)), when the component updates, and when the component gets unmounted or removed from the DOM.
+Lifecycle मेथड्स कस्टम कार्यक्षमता हैं जो किसी कौम्पोनॅन्ट के विभिन्न चरणों के दौरान निष्पादित होते हैं। मेथड्स तब उपलब्ध होते हैं जब कौम्पोनॅन्ट उपलब्ध होने के बाद DOM ([माउंटिंग](/docs/react-component.html#mounting)) में सम्मिलित होता हैं, जब कौम्पोनॅन्ट अपडेट करता है, और जब कौम्पोनॅन्ट अनमाउंट हो जाता है या DOM से हटा दिया जाता है।
 
- ## [Controlled](/docs/forms.html#controlled-components) vs. [Uncontrolled Components](/docs/uncontrolled-components.html)
+ ## [Controlled](/docs/forms.html#controlled-components) बनाम [Uncontrolled कौम्पोनॅन्ट](/docs/uncontrolled-components.html)
 
-React has two different approaches to dealing with form inputs. 
+फॉर्म इनपुट से निपटने के लिए React के दो अलग-अलग दृष्टिकोण हैं। 
 
-An input form element whose value is controlled by React is called a *controlled component*. When a user enters data into a controlled component a change event handler is triggered and your code decides whether the input is valid (by re-rendering with the updated value). If you do not re-render then the form element will remain unchanged.
+एक इनपुट फॉर्म एलिमेंट जिसके वैल्यू React द्वारा नियंत्रित किया जाता है, एक *controlled कौम्पोनॅन्ट* कहते है। जब कोई यूजर एक controlled कौम्पोनॅन्ट में डेटा दर्ज करता है तो एक परिवर्तन ईवेंट हैंडलर चालू हो जाता है और आपका कोड तय करता है कि इनपुट वैध है (अपडेट किए गए मूल्य के साथ पुन: रेंडर करके)। यदि आप फिर से री-रेंडर नहीं करते हैं, तो फार्म एलिमेंट अपरिवर्तित रहेगा।
 
-An *uncontrolled component* works like form elements do outside of React. When a user inputs data into a form field (an input box, dropdown, etc) the updated information is reflected without React needing to do anything. However, this also means that you can't force the field to have a certain value.
+एक *uncontrolled कौम्पोनॅन्ट* React के बाहर फार्म एलिमेंट्स की तरह काम करता है। जब कोई यूजर किसी फॉर्म फ़ील्ड (एक इनपुट बॉक्स, ड्रॉपडाउन, आदि) में डेटा इनपुट करता है, तो अपडेट की गई जानकारी React के कुछ भी करने की आवश्यकता के बिना परिलक्षित होती है। हालाँकि, इसका अर्थ यह भी है कि आप किसी निश्चित मान के लिए फ़ील्ड को बाध्य नहीं कर सकते।
 
-In most cases you should use controlled components.
+ज्यादातर मामलों में आपको controlled कौम्पोनॅन्ट्स का उपयोग करना चाहिए।
 
 ## [Keys](/docs/lists-and-keys.html) {#keys}
 
-A "key" is a special string attribute you need to include when creating arrays of elements. Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside an array to give the elements a stable identity.
+"keys" एक विशेष string विशेषता है जिसे आपको एलिमेंट्स की सारणी बनाते समय शामिल करना होगा। keys React को पहचानने में मदद करती हैं कि कौन से आइटम बदल गए हैं, जोड़े गए हैं या हटा दिए गए हैं। एलिमेंट्स को एक स्थिर पहचान देने के लिए array के अंदर एलिमेंट्स को key दी जानी चाहिए।
 
-Keys only need to be unique among sibling elements in the same array. They don't need to be unique across the whole application or even a single component.
+Keys को केवल एक ही array में सिबलिंग एलिमेंट्स के बीच अद्वितीय होना चाहिए। उन्हें संपूर्ण एप्लिकेशन या किसी एक कौम्पोनॅन्ट में विशिष्ट होने की आवश्यकता नहीं है।
 
-Don't pass something like `Math.random()` to keys. It is important that keys have a "stable identity" across re-renders so that React can determine when items are added, removed, or re-ordered. Ideally, keys should correspond to unique and stable identifiers coming from your data, such as `post.id`.
+`Math.random()` की तरह keys को कुछ भी पास मत करो। यह महत्वपूर्ण है कि keys में फिर से रेंडर करने वालों की एक "स्थिर पहचान" हो ताकि React यह निर्धारित कर सके कि आइटम कब जोड़े गए, हटाए गए या फिर से ऑर्डर किए गए। आदर्श रूप से, keys को आपके डेटा से आने वाले अनोखा और स्थिर पहचानकर्ताओं के अनुरूप होना चाहिए, जैसे कि `post.id`.
 
 ## [Refs](/docs/refs-and-the-dom.html) {#refs}
 
-React supports a special attribute that you can attach to any component. The `ref` attribute can be an object created by [`React.createRef()` function](/docs/react-api.html#reactcreateref) or a callback function, or a string (in legacy API). When the `ref` attribute is a callback function, the function receives the underlying DOM element or class instance (depending on the type of element) as its argument. This allows you to have direct access to the DOM element or component instance.
+React एक विशेष एट्रिब्यूट का समर्थन करता है जिसे आप किसी भी कौम्पोनॅन्ट से जोड़ सकते हैं। `ref` एट्रिब्यूट [`React.createRef()` फ़ंक्शन](/docs/react-api.html#reactcreateref) या कॉलबैक फ़ंक्शन, या string (लेगेसी API में) द्वारा बनाया गया ऑब्जेक्ट हो सकता है। जब `ref` एट्रिब्यूट कॉलबैक फ़ंक्शन होता है, तो फ़ंक्शन अपने आर्ग्यूमेंट के रूप में अंतर्निहित DOM एलिमेंट या class इंस्टेंस आर्ग्यूमेंट्स (एलिमेंट के प्रकार के आधार पर) के रूप में प्राप्त करता है। यह आपको DOM एलिमेंट या कौम्पोनॅन्ट इंस्टेंस तक सीधी पहुँच प्रदान करने की अनुमति देता है।
 
-Use refs sparingly. If you find yourself often using refs to "make things happen" in your app, consider getting more familiar with [top-down data flow](/docs/lifting-state-up.html).
+संयम से refs का प्रयोग करें। यदि आप अक्सर अपने ऐप में "चीजों को बनाने" के लिए refs का उपयोग करते हैं, तो [टॉप-डाउन डेटा प्रवाह](/docs/lifting-state-up.html) के साथ अधिक परिचित होने पर विचार करें।
 
-## [Events](/docs/handling-events.html) {#events}
+## [इवेंट्स](/docs/handling-events.html) {#events}
 
-Handling events with React elements has some syntactic differences:
+React एलिमेंट्स के साथ इवेंट्स को संभालने से कुछ सिंटैक्टिक अंतर होते हैं:
 
-* React event handlers are named using camelCase, rather than lowercase.
-* With JSX you pass a function as the event handler, rather than a string.
+* React इवेंट हैंडलर्स को लोअरकेस के बजाय कैमकलेस का उपयोग करके नामित किया जाता है।
+* JSX के साथ आप एक string के बजाय फंक्शन को हैंडलर के रूप में पास करते हैं।
 
 ## [Reconciliation](/docs/reconciliation.html) {#reconciliation}
 
-When a component's props or state change, React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. When they are not equal, React will update the DOM. This process is called "reconciliation".
+जब किसी कौम्पोनॅन्ट का props या state में परिवर्तन होता है, तो React पहले से रेंडर किए गए व नए लौटे एलिमेंट की तुलना करके निर्णय करता है कि वास्तविक DOM को अपडेट की आवश्यक है या नहीं। जब वे समान नहीं होते हैं, तो React DOM को अपडेट करता है। इस प्रक्रिया को "reconciliation" कहा जाता है।
